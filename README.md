@@ -4,7 +4,7 @@
 
 # **Palo Alto Firewall Static Shell**  
 
-Release date: **September 2018**
+Release date: **October 2018**
 
 Shell version: **1.0.0**
 
