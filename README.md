@@ -2,7 +2,7 @@
 <img src="https://github.com/QualiSystems/devguide_source/raw/master/logo.png"></img>
 </p>
 
-# **Palo Alto Firewall Static 2G Shell**  
+# **Palo Alto Firewall Static Shell**  
 
 Release date: **September 2018**
 
@@ -26,13 +26,13 @@ A shell integrates a device model, application or other technology with CloudShe
 ### Firewall Shells
 CloudShell's Firewall shells enable you to manage your Firewall device similar to your networking equipment but without connectivity. In CloudShell, a Firewall shell runs commands, such as Autoload, Load, and Save Configuration. 
 
-### **Palo Alto Firewall Static 2G Shell**
-The **Palo Alto Firewall Static 2G Shell** provides you with connectivity and management capabilities such as device structure discovery and power management for the **Palo Alto Firewall**. 
+### **Palo Alto Firewall Static Shell**
+The **Palo Alto Firewall Static Shell** provides you with connectivity and management capabilities such as device structure discovery and power management for the **Palo Alto Firewall**. 
 
 For more information on the **Palo Alto Firewall**, see the official **Palo Alto** product documentation.
 
 ### Standard version
-The **Palo Alto Firewall Static 2G Shell 1.0.0** is based on the Deployed App Shell Standard version 1.0.3.
+The **Palo Alto Firewall Static Shell 1.0.0** is based on the Deployed App Shell Standard version 1.0.3.
 
 For detailed information about the shell’s structure and attributes, see the [Deployed App Shell Standard](https://github.com/QualiSystems/cloudshell-standards/blob/master/Documentation/deployed_app_standard.md) in GitHub.
 
@@ -41,7 +41,7 @@ For detailed information about the shell’s structure and attributes, see the [
 
 ### Requirements
 
-Release: **Palo Alto Firewall Static 2G Shell 1.0.0**
+Release: **Palo Alto Firewall Static Shell 1.0.0**
 
 * CloudShell version 8.3 (with the latest patch) and above
 
@@ -70,7 +70,7 @@ The following commands are associated with the Palo Alto Firewall Static shell:
 |Load Firmware|Uploads and updates the firmware on the resource. <br>Command Inputs:</br><li>**Path**: Path to tftp://server where the firmware file is stored.|
 	
 # Downloading the Shell
-The **Palo Alto Firewall Static 2G Shell** is available from the [Quali Community Integrations](https://community.quali.com/integrations) page. 
+The **Palo Alto Firewall Static Shell** is available from the [Quali Community Integrations](https://community.quali.com/integrations) page. 
 
 Download the files into a temporary location on your local machine. 
 
@@ -82,7 +82,7 @@ The shell comprises:
 |cloudshell-firewall-paloalto-dependencies-package-1.0.0.zip|Shell Python dependencies (for offline deployments only)|
 
 # Importing and Configuring the Shell
-This section describes how to import the **Palo Alto Firewall Static 2G Shell** and configure and modify the shell’s devices.
+This section describes how to import the **Palo Alto Firewall Static Shell** and configure and modify the shell’s devices.
 
 ### Importing the shell into CloudShell
 
