@@ -1,0 +1,111 @@
+tosca_definitions_version: tosca_simple_yaml_1_0
+
+metadata:
+  template_name: Palo Alto Static Firewall Shell
+  template_author: Quali
+  template_version: 1.0.0
+  template_icon: shell-icon.png
+
+description: >
+  This Shell supports Palo Alto Firewall deployed app that run PanOS
+
+imports:
+  - cloudshell_standard: cloudshell_deployed_app_standard_1_0_3.yaml
+
+node_types:
+
+  vendor.switch.PaloAlto Static vFirewall:
+    derived_from: cloudshell.nodes.DeployedApp
+    properties:
+      vFirewall vCenter VM:
+        type: string          # optional values: string, integer, float, boolean, cloudshell.datatypes.Password
+        default:
+        description: Virtual Firewall vCenter VM to use in the VM creation. Should include the full path and the vm name, for example QualiFolder/VM121
+      vCenter Name:
+        type: string
+        default:
+        description: The vCenter resource name in CloudShell
+      GenericVPort.Logical Name:
+        type: string
+        description: The port's logical name in the test configuration. If kept emtpy - allocation will applied in the blue print.
+      Sessions Concurrency Limit:
+        description: The maximum number of concurrent sessions that the driver will open to the device. Default is 1 (no concurrency).
+        type: integer
+      CLI Connection Type:
+        type: string
+        description: The CLI connection type that will be used by the driver. Possible values are Auto, Console, SSH, Telnet and TCP. If Auto is selected the driver will choose the available connection type automatically. Default value is Auto.
+        default: Auto
+      CLI TCP Port:
+        description: TCP Port to user for CLI connection. If kept empty a default CLI port will be used based on the chosen protocol, for example Telnet will use port 23.
+        type: integer
+        default: 0
+      Backup Location:
+        description: Used by the save/restore orchestration to determine where backups should be saved.
+        type: string
+      Backup Type:
+        description: Supported protocols for saving and restoring of configuration and firmware files. Possible values are 'File System' 'FTP' and 'TFTP'. Default value is 'File System'.
+        type: string
+        default: File System
+      Backup User:
+        description: Username for the storage server used for saving and restoring of configuration and firmware files.
+        type: string
+      Backup Password:
+        description: Password for the storage server used for saving and restoring of configuration and firmware files.
+        type: cloudshell.datatypes.Password
+    capabilities:
+      auto_discovery_capability:
+        type: cloudshell.capabilities.AutoDiscovery
+        properties:        
+          enable_auto_discovery:
+            type: boolean
+            default: true
+          auto_discovery_description:
+            type: string
+            default: Describe the auto discovery
+          inventory_description:
+            type: string
+            default: Describe the resource shell template
+          vFirewall vCenter VM:
+            description: Virtual Firewall vCenter VM to use in the VM creation. Should include the full path and the vm name, for example QualiFolder/VM121
+            type: string
+          vCenter Name:
+            description: The vCenter resource name in CloudShell
+            type: string
+          User:
+            description: User with administrative privileges
+            type: string
+          Password:
+            description: The password is required by some CLI protocols such as Telnet and is required according to the device configuration.
+            type: cloudshell.datatypes.Password
+          Sessions Concurrency Limit:
+            description: The maximum number of concurrent sessions that the driver will open to the device. Default is 1 (no concurrency).
+            type: integer
+            default: 1
+          CLI Connection Type:
+            type: string
+            description: The CLI connection type that will be used by the driver. Possible values are Auto, Console, SSH, Telnet and TCP. If Auto is selected the driver will choose the available connection type automatically. Default value is Auto.
+            default: Auto
+          CLI TCP Port:
+            description: TCP Port to user for CLI connection. If kept empty a default CLI port will be used based on the chosen protocol, for example Telnet will use port 23.
+            type: integer
+            default: 0
+          Backup Location:
+            description: Used by the save/restore orchestration to determine where backups should be saved.
+            type: string
+          Backup Type:
+            description: Supported protocols for saving and restoring of configuration and firmware files. Possible values are 'File System' 'FTP' and 'TFTP'. Default value is 'File System'.
+            type: string
+            default: File System
+          Backup User:
+            description: Username for the storage server used for saving and restoring of configuration and firmware files.
+            type: string
+          Backup Password:
+            description: Password for the storage server used for saving and restoring of configuration and firmware files.
+            type: cloudshell.datatypes.Password
+    artifacts:
+      icon:
+        file: shell-icon.png
+        type: tosca.artifacts.File
+      driver:
+        file: PaloAltoStaticVirtualFirewallShellDriver.zip
+        type: tosca.artifacts.File
