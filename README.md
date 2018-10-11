@@ -16,7 +16,7 @@ Document version: **1.0.0**
 * [Downloading the Shell](#downloading-the-shell)
 * [Importing and Configuring the Shell](#importing-and-configuring-the-shell)
 * [Updating Python Dependencies for Shells](#updating-python-dependencies-for-shells)
-* [Typical Workflow and Scenarios](#typical-workflow-and-scenarios)
+* [Typical Workflows](#typical-workflows)
 * [References](#references)
 
 
@@ -175,9 +175,9 @@ The attribute names and types are listed in the following table.
 |Password|Password||Password for Palo Alto Firewall CLI|
 Public IP*|String|||
 
-# Typical Workflow and Scenarios 
+# Typical Workflows 
 
-**Scenario 1 - _Save configuration_** 
+**Workflow 1 - _Save configuration_** 
 1. In CloudShell Portal, add the device resource to an active sandbox.
 2. Run the **Save** command on the device with the following inputs:
     * **Folder Path**: For example, *tftp://ipaddress/shared folder* 
@@ -185,7 +185,7 @@ Public IP*|String|||
 
 The configuration is saved to a file named *<ResourceName><startup/running-config>-<timestamp>*, which will reside in the folder path you entered.    
 
-**Scenario 2 - _Restore Configuration_**
+**Workflow 2 - _Restore Configuration_**
 1. In CloudShell Portal, reserve the device resource.
 2. Run the **Restore** resource command.
 3. Enter the following parameters:
@@ -193,7 +193,7 @@ The configuration is saved to a file named *<ResourceName><startup/running-confi
     * **Restore Method** (optional): **Append** or **Override**. If you do not enter any value in this field, the **Append** method will be used. 
     * **Configuration Type** (mandatory): **Startup** or **Running**. 
 	
-**Scenario 3 - _Load firmware_**
+**Workflow 3 - _Load firmware_**
 1. In CloudShell Portal, reserve the device resource.
 2. Run the **Load Firmware** resource command.
 3. Enter the following parameters:
